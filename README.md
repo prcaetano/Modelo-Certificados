@@ -1,8 +1,8 @@
 Modelo de certificados
 ======================
 
-Modelo de certificados utilizado nos cursos do CACo - Centro Acadêmico da
-Computação da Unicamp.
+Modelo de certificados utilizado nos cursos de Latex do Camecc - Centro Acadêmico da
+Matemática da Unicamp, adaptado do modelo utilizado nos cursos do CACo.
 
 O modelo consiste de um script em Python capaz de gerar os certificados
 individuais a partir de uma lista de alunos e de alguns arquivos base.

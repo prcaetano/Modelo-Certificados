@@ -8,6 +8,7 @@ import argparse
 import csv
 import os
 import sys
+from subprocess import call
 
 # Create argument parser
 parser = argparse.ArgumentParser(description=__doc__)
@@ -91,7 +92,8 @@ cont = cont_f.read()
 # Generate individual tex files
 for d in data:
     name = d['name']
-    cur_f = open(os.path.join(full_out_dir, name + '.tex'), 'w')
+    filename = os.path.join(full_out_dir, name + '.tex')
+    cur_f = open(filename, 'w')
 
     if not quiet:
         print('Building ' + name + '.tex')
@@ -109,4 +111,9 @@ for d in data:
 
     # Write file
     cur_f.write(cur_text)
-
+    logo = os.path.join(in_dir, 'camecc.png')
+    out_logo = os.path.join(full_out_dir, 'camecc.png')
+    borda = os.path.join(in_dir, 'border-2.jpg')
+    out_borda = os.path.join(full_out_dir, 'border-2.jpg')
+    call(['cp', logo, out_logo])
+    call(['cp', borda, out_borda])
